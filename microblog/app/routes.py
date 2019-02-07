@@ -11,9 +11,22 @@ from app import app
 
 #The function render template is used to import a function that comes with the Flask framework.
 #Fucntion has template name and the lsit of arguments used by the HTML page.
+
 def index():
     user = {'username' : 'Haritha'}
-    return render_template('index.html', title='Home', user=user)
+    #list is used to represent the post field, where each element is a dictionary.
+    posts = [
+        {
+            'author': {'username': 'John'},
+            'body' : ' Beautiful day in Portland!'
+        },
+        {
+            'author' : {'username': 'Susan'},
+            'body': ' The Avengers movie was cool!'
+
+        }
+    ]
+    return render_template('index.html', title='Home', user=user, posts=posts)
 
 
 #<html>
