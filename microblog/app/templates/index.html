@@ -1,10 +1,13 @@
 <html>
     <head>
-        <title>{{ title }} - Microblog</title>
+        {% if title %}
+        <title> {{ title }} - Microblog </title>
+        {% else %}
+        <title> Welcome to Microblog! </title>
+        {% endif %}
     </head>
     <body>
-        <h1> Hello, {{ user.username }}!</h1>
+        <h1> Hello, {{ user.username }}! </h1>
     </body>
 </html>
 
-<!--The {{ <name> }} represents the variables in the file and can only be accessed during the run time.'!>
