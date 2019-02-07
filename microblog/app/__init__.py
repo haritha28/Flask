@@ -1,9 +1,11 @@
 #creates the application  object as an instance of flask
 from flask import Flask
+from config import Config
 #__name__ is a predefined variable which is set to the name of the module in which it is used
 #the app variable is referenced as an instance of the flask in this file.
 
 app = Flask(__name__)
+app.config.from_object(Config)
 
 #it imports the routes modules
 #the app here refers to the app package
